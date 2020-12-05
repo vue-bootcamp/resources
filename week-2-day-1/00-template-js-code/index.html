@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Template içerisinde JS kodu yazmak</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>Template içerisinde JS kodu yazmak</header>
+
+    <div id="app" class="container">
+      <div class="card">
+        <p>{{ message.toUpperCase() }}</p>
+        <div class="mt-5">
+          {{ age >= 18 ? 'Reşitsiniz' : 'Reşit Değilsiniz' }}
+        </div>
+        <div class="mt-5">{{ ageTest(age) }}</div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

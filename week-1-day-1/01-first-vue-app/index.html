@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>First App</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>First App</header>
+    <div id="app" class="container">
+      <div class="card">
+        <h3>{{ title }}</h3>
+        <p class="mb-5 mt-5">{{ description }}</p>
+        <a v-bind:href="url" v-bind:target="target">Linke Git..</a>
+        <p v-html="htmlContent"></p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

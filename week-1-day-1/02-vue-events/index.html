@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Events</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>Vue Events</header>
+    <div class="container" id="app">
+      <!-- <div class="card text-center">
+        <h3 @click="inc" class="mb-10">{{ count }}</h3>
+        <button v-on:click="inc" class="btn-primary mr-5">+</button>
+        <button @click="dec" class="btn-danger">-</button>
+        <p @click="dec">{{ desc }}</p>
+        <a href="#" @click.prevent="inc">kodluyoruz..</a>
+      </div> -->
+
+      <div class="card text-center">
+        <div class="form-group">
+          <input
+            type="text"
+            @input="valueChanged($event, 10)"
+            v-bind:value="count"
+          />
+        </div>
+        <h3>{{ count }} </h3>
+        <button v-on:click="inc" class="btn-primary mr-5">+</button>
+        <button @click="dec" class="btn-danger">-</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

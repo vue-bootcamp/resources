@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ToDo</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>JS vs Vue</header>
+    <div class="container" id="app">
+      <div class="card">
+        <div class="form-group">
+          <input v-model="todoValue" type="text" id="todoInput" />
+          <button v-on:click="addTodo" class="btn-success mt-5" id="addBtn">
+            Ekle
+          </button>
+        </div>
+        <ul class="list mt-5" id="todoList">
+          <li
+            class="list-item d-flex justify-content-between"
+            v-for="todo in todoList"
+            :key="todo"
+          >
+            <span>{{ todo }}</span>
+            <button class="btn-sm btn-danger">Sil</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reactive Properties</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>Reactive Properties</header>
+    <div id="app">
+      <div class="container">
+        <div class="card text-center">
+          <h3>{{ counter }}</h3>
+          <div class="mb-t mt-5">
+            <button class="mr-5" @click="counter++">+</button>
+            <button @click="counter--">-</button>
+          </div>
+          <!-- <p>{{ counterControl() }}</p> -->
+          <p>{{ counterFilter }}</p>
+        </div>
+
+        <div class="card ml-5 text-center">
+          <h3>{{ counter2 }}</h3>
+          <div class="mb-t mt-5">
+            <button class="mr-5" @click="counter2++">+</button>
+            <button @click="counter2--">-</button>
+          </div>
+          <!-- <p>{{ counterControl2() }}</p> -->
+          <p>{{ counterFilter2 }}</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card ml-5 text-center">
+          <input
+            class="mr-5"
+            type="text"
+            v-model="bookmark"
+            @keydown.enter="bookmarkList.push(bookmark)"
+          />
+          <input placeholder="search..." type="text" v-model="searchKey" />
+          <pre>
+           {{ bookmarkList }}
+         </pre
+          >
+
+          <pre>
+           {{ filteredBookMarkList }}
+         </pre
+          >
+          <!-- <small> {{ bookmarkList.length }} adet bookmark vardır..</small> -->
+          <small> {{ bookMarkCount }} </small>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            counter: 0,
+            counter2: 0,
+            bookmark: null,
+            bookmarkList: [],
+            searchKey: "",
+          };
+        },
+        methods: {
+          counterControl() {
+            console.log("Counter Control 1 Çalıştı..");
+            if (this.counter > 5) {
+              return "Sayı 5 sınırını aştı...";
+            }
+          },
+          counterControl2() {
+            console.log("Counter Control 2 Çalıştı..");
+            if (this.counter2 > 5) {
+              return "Sayı 5 sınırını aştı...";
+            }
+          },
+        },
+        computed: {
+          counterFilter() {
+            console.log("Computed 1 Çalıştı..");
+            if (this.counter > 5) {
+              return "Sayı 5 sınırını aştı...";
+            } else {
+              return "";
+            }
+          },
+          counterFilter2() {
+            console.log("Computed 2 Çalıştı..");
+            if (this.counter2 > 5) {
+              return "Sayı 5 sınırını aştı...";
+            } else {
+              return "";
+            }
+          },
+          bookMarkCount() {
+            return `Listenizde ${this.bookmarkList.length} adet bookmark vardır...`;
+            // return "Listenizde " + this.bookmarkList.length + " adet bookmark vardır..";
+          },
+          filteredBookMarkList() {
+            if (this.searchKey) {
+              return this.bookmarkList.filter((i) =>
+                i.includes(this.searchKey)
+              );
+            } else {
+              return [];
+            }
+          },
+        },
+        watch: {
+          counter(newValue, oldValue) {
+            console.log("Watch : Counter Değişti", newValue, oldValue);
+          },
+          counterFilter(newValue, oldValue) {
+            console.log("Watch : Counter Filter Değişti", newValue, oldValue);
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

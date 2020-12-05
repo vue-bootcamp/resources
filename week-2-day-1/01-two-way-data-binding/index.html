@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Two Way Data Binding</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>Two Way Data Binding</header>
+
+    <div id="app" class="container">
+      <!-- <div class="card">
+        <input
+          class="mb-5"
+          type="text"
+          :value="bookmark_name"
+          @input="bookmark_name = $event.target.value"
+        />
+        <input type="text" v-model="personal_name" />
+        <p>{{ bookmark_name }}</p>
+      </div> -->
+      {{ items }}
+      <div class="card">
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="1.Sayı"
+            v-model="sayi_1"
+            @keydown.enter="sayi_3 = parseInt(100) - parseInt(sayi_1) - parseInt(sayi_2)"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="2.Sayi"
+            v-model="sayi_2"
+            @keydown.enter="sayi_3 = parseInt(100) - parseInt(sayi_1) - parseInt(sayi_2)"
+          />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="3.Sayi" disabled v-model="sayi_3" />
+        </div>
+
+        <hr />
+        <input type="text" v-model="searchKey" @keydown.enter="filter" />
+        <p>{{ filteredSearchResults }}</p>
+      </div>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            // bookmark_name: null,
+            // personal_name: "Ahmet",
+            sayi_1: 0,
+            sayi_2: 0,
+            sayi_3: 0,
+            searchKey: null,
+            items: [
+              "Elma",
+              "Armut",
+              "Kiraz",
+              "Elmacık kemiği",
+              "Ayva tatlısı",
+              "tatlıcı",
+              "masa",
+            ],
+            filteredSearchResults: [],
+          };
+        },
+        methods: {
+          filter() {
+            // high level array function
+            this.filteredSearchResults = this.items.filter(
+              (i) => i.indexOf(this.searchKey) > -1
+            );
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
