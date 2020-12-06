@@ -3,7 +3,7 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .bg-success {
@@ -174,44 +174,44 @@
 
 .justify-content-start {
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .justify-content-center {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .justify-content-end {
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .justify-content-between {
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .align-items-start {
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .align-items-center {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .align-items-end {
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .w-10 {
@@ -393,11 +393,11 @@ button.btn-danger:active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   margin-bottom: 10px;
 }
 
@@ -437,11 +437,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #324354;
   color: #fff;
   font-size: 20px;
@@ -456,18 +456,19 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 ul.list {
+  margin-top: 10px;
   list-style-type: none;
 }
 
-ul.list li.list-item {
+ul.list li {
   padding: 5px 10px;
   background-color: #efefef;
   margin-bottom: 5px;
@@ -476,11 +477,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pokemon--wars--app--container .game--area {
@@ -489,14 +490,14 @@ ul.list li.list-item {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 10px;
 }
@@ -511,14 +512,14 @@ ul.list li.list-item {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -534,9 +535,7 @@ ul.list li.list-item {
   margin-right: none;
 }
 
-.pokemon--wars--app--container
-  .selection--container
-  img.pikachu.selected-pokemon {
+.pokemon--wars--app--container .selection--container img.pikachu.selected-pokemon {
   border-radius: 10px;
   background-color: #f8c953c8;
   -webkit-transition: all 0.5s;
@@ -550,9 +549,7 @@ ul.list li.list-item {
   transition: all 0.5s;
 }
 
-.pokemon--wars--app--container
-  .selection--container
-  img.bulbasaur.selected-pokemon {
+.pokemon--wars--app--container .selection--container img.bulbasaur.selected-pokemon {
   border-radius: 10px;
   background-color: #6ddba8c8;
 }
@@ -562,9 +559,7 @@ ul.list li.list-item {
   background-color: #6ddba8c8;
 }
 
-.pokemon--wars--app--container
-  .selection--container
-  img.charmander.selected-pokemon {
+.pokemon--wars--app--container .selection--container img.charmander.selected-pokemon {
   border-radius: 10px;
   background-color: #f7973fc8;
 }
@@ -574,9 +569,7 @@ ul.list li.list-item {
   background-color: #f7973fc8;
 }
 
-.pokemon--wars--app--container
-  .selection--container
-  img.squirtle.selected-pokemon {
+.pokemon--wars--app--container .selection--container img.squirtle.selected-pokemon {
   border-radius: 10px;
   background-color: #78eeffc8;
 }
@@ -595,11 +588,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .pokemon--wars--app--container .name--health--bar {
@@ -607,11 +600,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pokemon--wars--app--container .name--health--bar img {
@@ -660,7 +653,7 @@ ul.list li.list-item {
 .pokemon--wars--app--container progress[value] {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+       appearance: none;
   width: 250px;
   height: 35px;
 }
@@ -679,19 +672,16 @@ ul.list li.list-item {
   border: 2px solid #6ddba8;
 }
 
-.pokemon--wars--app--container
-  progress.bulbasaur[value]::-webkit-progress-value {
+.pokemon--wars--app--container progress.bulbasaur[value]::-webkit-progress-value {
   background-color: #6ddba8c8;
 }
 
-.pokemon--wars--app--container
-  progress.charmander[value]::-webkit-progress-bar {
+.pokemon--wars--app--container progress.charmander[value]::-webkit-progress-bar {
   background-color: #f7973f27;
   border: 2px solid #f7973f;
 }
 
-.pokemon--wars--app--container
-  progress.charmander[value]::-webkit-progress-value {
+.pokemon--wars--app--container progress.charmander[value]::-webkit-progress-value {
   background-color: #f7973fc8;
 }
 
@@ -700,8 +690,7 @@ ul.list li.list-item {
   border: 2px solid #78eeff;
 }
 
-.pokemon--wars--app--container
-  progress.squirtle[value]::-webkit-progress-value {
+.pokemon--wars--app--container progress.squirtle[value]::-webkit-progress-value {
   background-color: #78eeffc8;
 }
 
@@ -724,11 +713,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 5px;
 }
 
@@ -743,11 +732,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .css--class--app .css--palette li {
@@ -773,12 +762,12 @@ ul.list li.list-item {
 .bookmark--app--container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bookmark--app--container .bookmark-item {
@@ -794,11 +783,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .course--planner-app--container .user--action--container {
@@ -806,11 +795,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .course--planner-app--container .user--action--container .form-group {
@@ -858,11 +847,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bet--coupon--app .competition-item:last-child {
@@ -874,15 +863,15 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .bet--coupon--app .competition-item .rates {
@@ -890,8 +879,8 @@ ul.list li.list-item {
   text-align: right;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .bet--coupon--app .coupon-item {
@@ -916,28 +905,25 @@ ul.list li.list-item {
   min-width: 300px !important;
 }
 
-.bet--coupon--app
-  .coupon--total--container
-  .multiply--container
-  button:not(:last-child) {
+.bet--coupon--app .coupon--total--container .multiply--container button:not(:last-child) {
   margin-right: 5px;
   margin-bottom: 5px;
 }
 
 .bet--coupon--app .multiply--buttons {
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact--card--app {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [4];
-  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact--card--app .contact-item {
@@ -1028,15 +1014,15 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 10px;
   height: calc(100vh - 200px);
   overflow-y: scroll;
@@ -1053,21 +1039,21 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .chat--app--container .card .messages li small {
   margin-top: 10px;
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   font-size: 12px;
   color: #ccc;
   font-style: italic;
@@ -1075,7 +1061,7 @@ ul.list li.list-item {
 
 .chat--app--container .card .messages li.current-user {
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   background-color: #05a0f4;
   color: #fff;
 }
@@ -1103,8 +1089,8 @@ ul.list li.list-item {
   list-style-type: none !important;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .class--list--app .class-list li {
@@ -1113,11 +1099,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .class--list--app textarea {
@@ -1129,8 +1115,8 @@ ul.list li.list-item {
   list-style-type: none !important;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [6];
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
 }
 
 .rate--calculator--app .rate-list li {
@@ -1139,11 +1125,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .rate--calculator--app input#money {
@@ -1155,8 +1141,8 @@ ul.list li.list-item {
   list-style-type: none;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .rate--calculator--app .rates-container li {
@@ -1164,11 +1150,11 @@ ul.list li.list-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 5px;
 }
 

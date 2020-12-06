@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue ile Döngüler</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .will-delete-item {
+        border: 1px solid #c64b4b !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Vue ile Döngüler</header>
+    <div id="app">
+      <div class="container">
+        <div class="card">
+          <ul class="list">
+            <li
+              v-for="student in students"
+              :key="student.id"
+              class="list-item"
+              :class="{'will-delete-item' : student.checked}"
+            >
+              <span>
+                <input v-model="student.checked" type="checkbox" class="mr-5" />
+                <strong class="mr-5">({{ student.id }})</strong>
+                <span>{{ student.name }}</span>
+              </span>
+              <img :src="student.avatar" alt="" />
+
+              <div v-if="false">
+                <div v-for="(value, field) in student">
+                  {{ `${field} => ${value}`}}
+                </div>
+              </div>
+            </li>
+          </ul>
+          <button
+            v-if="selectedItems > 0"
+            class="btn w-100 btn-sm btn-danger"
+            @click="deleteItem(index)"
+          >
+            Seçilenleri Sil ({{ selectedItems }})
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            students: [
+              {
+                id: 1,
+                name: "Gokhan Kandemir",
+                avatar: "https://picsum.photos/100",
+                checked: false,
+              },
+              {
+                id: 2,
+                name: "Felakettin",
+                avatar: "https://picsum.photos/100",
+                checked: false,
+              },
+              {
+                id: 3,
+                name: "İflasettin",
+                avatar: "https://picsum.photos/100",
+                checked: false,
+              },
+            ],
+          };
+        },
+        methods: {
+          deleteItem(index) {
+            this.students.splice(index, 1);
+            // this.students = this.students.filter((s) => s !== deletedItem);
+          },
+        },
+        computed: {
+          selectedItems() {
+            return this.students.filter((s) => s.checked).length;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

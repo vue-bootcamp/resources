@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue ile Döngüler</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>Vue ile Döngüler</header>
+    <div id="app">
+      <div class="container">
+        <div class="card">
+          <ul class="list">
+            <li
+              v-for="(student, index) in students"
+              :key="index"
+              class="list-item"
+            >
+              <span>
+                <strong class="mr-5">({{ index + 1 }})</strong>
+                <span>{{ student }}</span>
+              </span>
+              <button class="btn btn-sm btn-danger" @click="deleteItem(index)">
+                Sil
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            students: [],
+          };
+        },
+        methods: {
+          deleteItem(index) {
+            this.students.splice(index, 1);
+            // this.students = this.students.filter((s) => s !== deletedItem);
+          },
+        },
+        created() {
+          setTimeout(() => {
+            this.students = [
+              "Gökhan Kandemir",
+              "Barış Tunar",
+              "Burak AÇIKGÖZ",
+              "Burak Hamzalı",
+              "Burçin Eren",
+            ];
+          }, 300);
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

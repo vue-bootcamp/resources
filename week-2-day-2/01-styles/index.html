@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue ile Dinamik olarak Style ile Uğraşmak</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: #233445;
+        color: #fff;
+        margin-right: 5px;
+      }
+
+      .box-color-red {
+        background-color: #c64b4b !important;
+      }
+
+      .box-color-blue {
+        background-color: #316bc2 !important;
+      }
+
+      .box-color-green {
+        background-color: #6dc454 !important;
+      }
+
+      .center-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .is-invalid {
+        border: 1px solid #c64b4b;
+      }
+
+      .is-success {
+        border: 1px solid #6dc454;
+      }
+
+      .alert {
+        display: none;
+        background-color: #233445;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-top: 20px;
+      }
+      .isActive {
+        display: block;
+      }
+      .alertError {
+        background-color: #c64b4b;
+      }
+
+      .alertSuccess {
+        background-color: #6dc454;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Vue ile Dinamik olarak Style ile Uğraşmak</header>
+    <div id="app">
+      <div class="container">
+        <div class="card text-center">
+          <!-- <div class="box" :style="{ color : '#f00', fontSize : '20px' }">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, enim
+          </div> -->
+          <button
+            class="btn btn-primary mr-5"
+            @click="changeStyle('flex-start')"
+          >
+            Start
+          </button>
+          <button class="btn btn-warning mr-5" @click="changeStyle('center')">
+            Center
+          </button>
+          <button class="btn btn-danger" @click="changeStyle('flex-end')">
+            End
+          </button>
+          <div class="box mt-10" :style="boxStyles">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, enim
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            searchKey: "",
+            isInvalid: false, // false, true
+            boxStyles: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "yellow",
+              fontSize: "10px",
+            },
+          };
+        },
+        methods: {
+          changeStyle(value) {
+            console.log("value", value);
+            this.boxStyles.alignItems = value;
+            this.$forceUpdate();
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

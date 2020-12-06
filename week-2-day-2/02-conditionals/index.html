@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue ile Koşullar</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>Vue ile Koşullar</header>
+    <div id="app">
+      <div v-if="false" class="container">
+        <div class="card text-center">
+          <button class="btn btn-primary" @click="showText = !showText">
+            Gizle / Göster
+          </button>
+          <h3 v-if="showText" class="mt-10 text-info">
+            Bu paragraf Değer True olduğunda gösterilecektir...
+            <input type="text" />
+          </h3>
+          <!-- <p v-else-if="!showText" class="mt-10">
+            Bu paragraf Değer False olduğunda gözükür...
+          </p> -->
+          <div v-else class="mt-10">
+            Bu paragraf Değer False olduğunda gözükür...
+          </div>
+        </div>
+      </div>
+      <div v-if="false" class="container">
+        <div class="card">
+          <h3 v-show="showText" class="mt-10 text-danger">
+            Bu paragraf Değer True olduğunda gösterilecektir...
+            <input type="text" />
+          </h3>
+          <h2 v-show="!showText" class="mt-10">
+            Bu paragraf Değer False olduğunda gösterilecektir...
+          </h2>
+        </div>
+      </div>
+
+      <!-- bu uygulamayı computed ile nasıl yapabilirsiniz? -->
+      <div class="container">
+        <div class="card">
+          <div class="form-group">
+            <div class="d-flex justify-content-start align-items-center">
+              <input v-model="firstName" type="text" class="mr-5" />
+              <button class="btn btn-sm btn-primary" @click="savePerson">
+                Save
+              </button>
+            </div>
+          </div>
+          <small v-if="isInvalid" class="text-danger"
+            >Bu alan gereklidir...</small
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            showText: false,
+            firstName: "",
+            isInvalid: false,
+          };
+        },
+        methods: {
+          savePerson() {
+            if (this.firstName.length === 0) {
+              this.isInvalid = true;
+            } else {
+              this.isInvalid = false;
+            }
+          },
+        },
+        watch: {
+          isInvalid(value) {
+            if (value) {
+              setTimeout(() => {
+                this.isInvalid = false;
+              }, 2000);
+            }
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
