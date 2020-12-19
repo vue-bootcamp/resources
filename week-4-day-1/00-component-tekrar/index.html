@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Component Tekrar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <counter></counter>
+      <counter></counter>
+      <counter></counter>
+      <counter></counter>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            counter: 0,
+          };
+        },
+      });
+
+      app.component("counter", {
+        data() {
+          return {
+            counter: 0,
+          };
+        },
+        methods: {},
+        computed: {},
+        watch: {},
+        template: `
+        <div class="row mt-5">
+        <div class="col border p-2 text-center">
+          <h1>Counter 1</h1>
+          <h3>{{ counter }}</h3>
+          <button class="btn btn-success mr-2" @click="counter++">(+)</button>
+          <button class="btn btn-danger ml-5" @click="counter--">(-)</button>
+        </div>
+      </div>
+        `,
+        // life cycle...
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
