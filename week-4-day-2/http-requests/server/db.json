@@ -1,0 +1,10 @@
+{
+  "bookmarks": [
+    {
+      "id": 1,
+      "title": "Bookmark 1",
+      "description": "Güzel bir bookmark",
+      "url": "https://www.kodluyoruz.org"
+    }
+  ]
+}
