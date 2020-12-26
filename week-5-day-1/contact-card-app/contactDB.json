@@ -1,0 +1,27 @@
+{
+  "contact_requests": [
+    {
+      "id": 3,
+      "contact_name": "Defne Kandemir",
+      "title": "CEO at PureSOL",
+      "shared_contacts": 1000,
+      "img": "https://picsum.photos/200/300?random=2"
+    },
+    {
+      "id": 4,
+      "contact_name": "Felakettin",
+      "title": "Çaycı",
+      "shared_contacts": 50,
+      "img": "https://picsum.photos/200/300?random=3"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "contact_name": "Gokhan Kandemir",
+      "title": "Engineer at PureSOL",
+      "shared_contacts": 140,
+      "img": "https://picsum.photos/200/300?random=0"
+    }
+  ]
+}

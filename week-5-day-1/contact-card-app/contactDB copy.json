@@ -1,0 +1,33 @@
+{
+  "contact_requests": [
+    {
+      "id": 1,
+      "contact_name": "Gokhan Kandemir",
+      "title": "Engineer at PureSOL",
+      "shared_contacts": 140,
+      "img": "https://picsum.photos/200/300?random=0"
+    },
+    {
+      "id": 2,
+      "contact_name": "İflasettin",
+      "title": "Teknik Dana",
+      "shared_contacts": 20,
+      "img": "https://picsum.photos/200/300?random=1"
+    },
+    {
+      "id": 3,
+      "contact_name": "Defne Kandemir",
+      "title": "CEO at PureSOL",
+      "shared_contacts": 1000,
+      "img": "https://picsum.photos/200/300?random=2"
+    },
+    {
+      "id": 4,
+      "contact_name": "Felakettin",
+      "title": "Çaycı",
+      "shared_contacts": 50,
+      "img": "https://picsum.photos/200/300?random=3"
+    }
+  ],
+  "contacts": []
+}
