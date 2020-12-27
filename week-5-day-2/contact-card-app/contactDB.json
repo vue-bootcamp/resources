@@ -1,0 +1,75 @@
+{
+  "contact_requests": [
+    {
+      "id": 4,
+      "user_id": 4,
+      "contact_name": "Felakettin",
+      "title": "Çaycı",
+      "shared_contacts": 50,
+      "img": "https://picsum.photos/200/300?random=3"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "contact_name": "Gokhan Kandemir",
+      "title": "Engineer at PureSOL",
+      "shared_contacts": 140,
+      "img": "https://picsum.photos/200/300?random=0"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "contact_name": "Defne Kandemir",
+      "title": "CEO at PureSOL",
+      "shared_contacts": 1000,
+      "img": "https://picsum.photos/200/300?random=2"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "contact_name": "Gokhan Kandemir",
+      "title": "Engineer at PureSOL",
+      "shared_contacts": 140,
+      "img": "https://picsum.photos/200/300?random=0",
+      "hobbies": [
+        "Kod yazmak",
+        "Kitap okumak",
+        "Film izlemek",
+        "Problemlerle uğraşmak"
+      ]
+    },
+    {
+      "id": 2,
+      "contact_name": "İflasettin",
+      "title": "Teknik Dana",
+      "shared_contacts": 20,
+      "img": "https://picsum.photos/200/300?random=1"
+    },
+    {
+      "id": 3,
+      "contact_name": "Defne Kandemir",
+      "title": "CEO at PureSOL",
+      "shared_contacts": 1000,
+      "img": "https://picsum.photos/200/300?random=2",
+      "hobbies": [
+        "Dans Etmek",
+        "Müzük dinlemek",
+        "Oyun oynamak",
+        "Zıplamak",
+        "Kedi Kovalamak",
+        "Köpek kovalamak",
+        "Limon toplamak"
+      ]
+    },
+    {
+      "id": 4,
+      "contact_name": "Felakettin",
+      "title": "Çaycı",
+      "shared_contacts": 50,
+      "img": "https://picsum.photos/200/300?random=3"
+    }
+  ]
+}
