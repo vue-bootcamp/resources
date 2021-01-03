@@ -1,0 +1,16 @@
+{
+  "bookmarks": [
+    {
+      "id": 1,
+      "title": "Vue3 Dokümantasyonu 2",
+      "description": "Çok güzel yapmışlar bence 2",
+      "url": "https://v3.vuejs.org"
+    },
+    {
+      "title": "Vue2 Dokümantasyonu",
+      "description": "Vue 2 Documentation 454356",
+      "url": "https://www.vuejs.org",
+      "id": 2
+    }
+  ]
+}

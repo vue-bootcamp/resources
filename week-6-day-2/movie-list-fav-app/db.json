@@ -1,0 +1,84 @@
+{
+  "favorites": [
+    {
+      "Title": "Hababam Sinifi Dokuz Doguruyor",
+      "Year": "1978",
+      "imdbID": "tt0289968",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMWI1YjBkNTktYWE1Yi00YzNjLTk4OTMtYTI1ZGVhMGZjMjg1XkEyXkFqcGdeQXVyMjExNjgyMTc@._V1_SX300.jpg",
+      "id": 1
+    },
+    {
+      "Title": "Iyi Aile Çocugu",
+      "Year": "1978",
+      "imdbID": "tt0253151",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjI5OGI0N2MtYjk0NS00OWVjLThmMDgtOThjZDFhNjgyOWUwXkEyXkFqcGdeQXVyMjExNjgyMTc@._V1_SX300.jpg",
+      "id": 2
+    },
+    {
+      "Title": "Iron Man",
+      "Year": "2008",
+      "imdbID": "tt0371746",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg",
+      "id": 3
+    },
+    {
+      "Title": "The Man from Earth",
+      "Year": "2007",
+      "imdbID": "tt0756683",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzQ5NGQwOTUtNWJlZi00ZTFiLWI0ZTEtOGU3MTA2ZGU5OWZiXkEyXkFqcGdeQXVyMTczNjQwOTY@._V1_SX300.jpg",
+      "id": 4
+    },
+    {
+      "Title": "Hababam Sinifi Dokuz Doguruyor",
+      "Year": "1978",
+      "imdbID": "tt0289968",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMWI1YjBkNTktYWE1Yi00YzNjLTk4OTMtYTI1ZGVhMGZjMjg1XkEyXkFqcGdeQXVyMjExNjgyMTc@._V1_SX300.jpg",
+      "id": 5
+    },
+    {
+      "Title": "Hababam taburu",
+      "Year": "1975",
+      "imdbID": "tt1691845",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDk0YzcxODMtNDVkYi00MmExLTgzZDEtMTk5ZjdkYmFiYmRmXkEyXkFqcGdeQXVyMjExNjgyMTc@._V1_SX300.jpg",
+      "id": 6
+    },
+    {
+      "Title": "Hababam Git Hababam Gel",
+      "Year": "1975",
+      "imdbID": "tt5586480",
+      "Type": "movie",
+      "Poster": "N/A",
+      "id": 7
+    },
+    {
+      "Title": "Iron Man 3",
+      "Year": "2013",
+      "imdbID": "tt1300854",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_SX300.jpg",
+      "id": 8
+    },
+    {
+      "Title": "Iron Man 2",
+      "Year": "2010",
+      "imdbID": "tt1228705",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_SX300.jpg",
+      "id": 9
+    },
+    {
+      "Title": "X-Men Origins: Wolverine",
+      "Year": "2009",
+      "imdbID": "tt0458525",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZWRhMzdhMzEtZTViNy00YWYyLTgxZmUtMTMwMWM0NTEyMjk3XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+      "id": 10
+    }
+  ]
+}
