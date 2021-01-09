@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container question-detail-page">
+      <div class="row mt-3">
+        <!-- SORULAR -->
+        <div class="col-10 offset-1">
+          <div class="card text-left mb-3">
+            <div class="card-body">
+              <h3 class="card-title">Special title treatment</h3>
+              <div class="mt-3">
+                <p class="text-muted">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dicta saepe porro fugiat inventore. Pariatur nostrum aperiam iste. Dolor quo quisquam cumque, fuga libero iusto placeat possimus incidunt maxime obcaecati. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Quia ratione velit quaerat quam a, veniam hic recusandae consectetur iusto fugit itaque impedit eaque, minus distinctio minima temporibus, rerum repellat. Harum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio inventore dolorem dolores laboriosam quibusdam molestias
+                  suscipit, quas, explicabo nemo omnis velit tempora ipsa quasi facere commodi tempore voluptate accusamus temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident mollitia numquam facilis ea dolor incidunt molestiae officiis cumque qui magni. Doloremque
+                  pariatur veniam eaque necessitatibus optio corrupti distinctio quam aliquam.
+                </p>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="custom-text-light"><i class="fa fa-user-circle me-1"></i> Gökhan 2 gün önce sordu</div>
+                  <div class="custom-text-light">JavaScript, Vue.js</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-muted py-3 question-footer flex-column d-flex justify-content-between align-items-center">
+              <!-- CEVAPLAR-->
+              <div class="card text-left mb-3 ms-1">
+                <div class="card-body">
+                  <div class="mt-3">
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dicta saepe porro fugiat inventore. Pariatur nostrum aperiam iste. Dolor quo quisquam cumque, fuga libero iusto placeat possimus incidunt maxime obcaecati.</p>
+                  </div>
+                </div>
+                <div class="card-footer text-muted py-2 question-footer d-flex justify-content-between align-items-center">
+                  <div class="custom-text-light"><i class="fa fa-user-circle me-1"></i> Gökhan 2 gün önce cevapladı</div>
+                  <div class="question-action-container">
+                    <a href="#" class="like-btn text-muted me-2"> <i class="fa fa-thumbs-up"></i> (2) </a>
+                    <a href="#" class="dislike-btn text-muted"> <i class="fa fa-thumbs-down"></i> (3) </a>
+                  </div>
+                </div>
+              </div>
+              <!-- !CEVAPLAR-->
+            </div>
+          </div>
+        </div>
+        <!-- !SORULAR -->
+      </div>
+    </div>
+  </body>
+</html>

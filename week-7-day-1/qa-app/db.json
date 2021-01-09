@@ -1,0 +1,119 @@
+{
+  "categories": [
+    {
+      "title": "Vue.js",
+      "id": 1
+    },
+    {
+      "title": "JavaScript",
+      "id": 2
+    },
+    {
+      "title": "PHP",
+      "id": 3
+    },
+    {
+      "title": ".Net",
+      "id": 4
+    },
+    {
+      "title": "React",
+      "id": 5
+    },
+    {
+      "title": "Angular",
+      "id": 6
+    },
+    {
+      "title": "Svelte",
+      "id": 7
+    },
+    {
+      "title": "Webpack",
+      "id": 8
+    },
+    {
+      "title": "GO",
+      "id": 9
+    },
+    {
+      "title": "Python",
+      "id": 10
+    },
+    {
+      "title": "DevOPS",
+      "id": 11
+    },
+    {
+      "title": "AWS",
+      "id": 12
+    }
+  ],
+  "questions": [
+    {
+      "title": "Amazon'da S3 Problemi",
+      "details": "S3 Public yapamıyorum lütfen yardım edin arkadaşlar...",
+      "categoryId": 12,
+      "id": 1,
+      "created_at": "2021-01-08T08:14:49.578Z"
+    },
+    {
+      "title": "Amazon'da EC2 Problemi",
+      "details": "EC2 nedir anlatabilecek olan var mı?",
+      "categoryId": 12,
+      "id": 2,
+      "created_at": "2021-01-05T09:14:49.578Z"
+    },
+    {
+      "title": "Vue ile Route Problemi",
+      "details": "Named Route kullanırken LazyLoad şeklinde bla bla bla bla",
+      "categoryId": 1,
+      "id": 3,
+      "created_at": "2021-01-07T13:14:49.578Z"
+    },
+    {
+      "title": "Deneme Sorusu",
+      "details": "Vue.js ile ilgili sorularım var. Yardımcı olabilecek var mi?",
+      "categoryId": 1,
+      "id": 4,
+      "created_at": "2021-01-09T11:14:49.578Z"
+    },
+    {
+      "title": "Bu yeni bir soru",
+      "details": "detay 123",
+      "categoryId": 8,
+      "created_at": "2021-01-09T12:08:41.760Z",
+      "id": 5
+    },
+    {
+      "title": "bu yeni bir sorudur",
+      "details": "aciklamasi nerede gizlidir..",
+      "categoryId": 9,
+      "created_at": "2021-01-09T12:14:49.578Z",
+      "id": 6
+    },
+    {
+      "title": "Docker run Sorunu",
+      "details": "DockerHUB üzerinde bir image var bunu docker run ile çekmeye çalışıyorum ama bir türlü beceremedim. Pull oluyor ama run neden çalışmıyor?",
+      "categoryId": 11,
+      "created_at": "2021-01-09T12:38:20.746Z",
+      "id": 7
+    },
+    {
+      "title": "Svelte'nin Geleceği",
+      "details": "Svelte diye bir şey çıkmış anlamadım gitti. Acaba Vue.js'i geçer mi bilen var mi?",
+      "categoryId": 7,
+      "created_at": "2021-01-09T12:39:42.097Z",
+      "id": 8
+    },
+    {
+      "title": "Typicode/json-server nasıl?",
+      "details": "Böyle bir fake rest api buldum nasıl arkadaşlar? İşe yaramaz bir şeymiş gibi geldi bana?",
+      "categoryId": 2,
+      "created_at": "2021-01-09T12:44:34.336Z",
+      "id": 9
+    }
+  ],
+  "comments": [],
+  "users": []
+}
