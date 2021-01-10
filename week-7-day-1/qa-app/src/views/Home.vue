@@ -25,6 +25,13 @@ export default {
     return {
       categoryId: null
     };
+  },
+
+  created() {
+    // const title = this.$store.state.title;
+    // const title = this.$store.state.categories.title;
+    // const title = this.$store.state.questions.title;
+    // console.log("Title", title);
   }
 };
 </script>

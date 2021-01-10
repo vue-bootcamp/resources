@@ -114,6 +114,20 @@
       "id": 9
     }
   ],
-  "comments": [],
-  "users": []
+  "comments": [
+    {
+      "details": "evet gerçekten cok güzel bir araç seve seve kullanıyoruz",
+      "questionId": 9,
+      "created_at": "2021-01-10T12:08:41.760Z",
+      "id": 1
+    },
+    {
+      "details": "bunun local app olarak kullanılan versionunu gördünüz mü?",
+      "questionId": 9,
+      "created_at": "2021-01-10T14:10:41.760Z",
+      "id": 2
+    }
+  ],
+  "users": [],
+  "favorites": []
 }

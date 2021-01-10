@@ -1,45 +1,45 @@
 <template>
-  <div class="col-10">
+  <div v-if="questions.length > 0" class="col-10">
     <question-list-item
       v-for="question in questions"
       :key="question.id"
       :question="question"
     />
   </div>
+  <div v-else class="col-4 offset-3 mt-5">
+    <div class="alert alert-primary" role="alert">
+      Bu Kategori(lere) ait bir soru bulunamadı. Soru sormak için
+      <router-link :to="newQuestionURL">tıklayınız</router-link>
+    </div>
+  </div>
 </template>
 <script>
 import questionListItem from "@/components/Home/questionListItem";
-import { appAxios } from "@/utils/securedAxios";
+import { mapGetters } from "vuex";
 export default {
-  props: ["categoryId"],
   components: {
     questionListItem
   },
-  data() {
-    return {
-      questions: []
-    };
-  },
   created() {
-    this.fetchQuestions();
+    // this.fetchQuestions();
+    this.$store.dispatch("questions/fetchQuestions", this.selectedCategories);
   },
-  methods: {
-    fetchQuestions(categoryId) {
-      const url = categoryId
-        ? `/questions?_expand=category&_sort=created_at&_order=desc&categoryId=${categoryId}`
-        : `/questions?_expand=category&_sort=created_at&_order=desc`;
-
-      appAxios.get(url).then(question_list_response => {
-        this.questions = question_list_response?.data || [];
-        console.log("question_list_response :>> ", question_list_response);
-      });
-    }
-  },
-  watch: {
-    categoryId(categoryId) {
-      if (categoryId !== null) {
-        this.fetchQuestions(categoryId);
+  computed: {
+    ...mapGetters({
+      questions: "questions/_questionList",
+      selectedCategories: "categories/_selectedCategoryList"
+    }),
+    selectedCategory() {
+      if (this.selectedCategories.length === 1) {
+        return this.selectedCategories[0]?.id;
+      } else {
+        return false;
       }
+    },
+    newQuestionURL() {
+      return this.selectedCategory
+        ? `/new?categoryId=${this.selectedCategory}`
+        : "/new";
     }
   }
 };

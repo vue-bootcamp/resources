@@ -63,10 +63,10 @@
 </template>
 <script>
 import { appAxios } from "@/utils/securedAxios";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      categories: [],
       userData: {
         title: null,
         details: null,
@@ -75,9 +75,7 @@ export default {
     };
   },
   created() {
-    appAxios.get("/categories").then(category_response => {
-      this.categories = category_response.data || [];
-    });
+    this.userData.categoryId = this.$route.query?.categoryId || null;
   },
   methods: {
     onSave() {
@@ -102,7 +100,10 @@ export default {
           v => v === null || v?.length === 0 || v?.length === ""
         ).length > 0
       );
-    }
+    },
+    ...mapGetters({
+      categories: "categories/_categoryList"
+    })
   }
 };
 </script>
