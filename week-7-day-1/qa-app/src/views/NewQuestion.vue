@@ -21,12 +21,7 @@
             </div>
             <div class="mb-3">
               <label for="question-details" class="form-label">Detaylar</label>
-              <textarea
-                v-model="userData.details"
-                class="form-control"
-                id="question-details"
-                rows="3"
-              ></textarea>
+              <quill-editor v-model.value="userData.details" />
             </div>
             <div class="mb-3">
               <label for="question-category" class="form-label">Kategori</label>
@@ -45,6 +40,7 @@
               </select>
             </div>
           </div>
+
           <div
             class="card-footer text-muted d-flex justify-content-end align-items-center"
           >
@@ -69,7 +65,7 @@ export default {
     return {
       userData: {
         title: null,
-        details: null,
+        details: "",
         categoryId: null
       }
     };

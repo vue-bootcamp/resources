@@ -82,3 +82,28 @@
   border-color: #9a2ce8;
   color: #666;
 }
+
+.answerArea textarea {
+  resize: none;
+  margin-left: 2px;
+}
+
+.answerArea textarea::placeholder {
+  color: #6c7578a8;
+}
+
+.text-primary {
+  color: #8409de !important;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+.btn-link.text-primary:hover {
+  color: #5c069a !important;
+}
+
+.ql-container {
+  min-height: 200px !important;
+}

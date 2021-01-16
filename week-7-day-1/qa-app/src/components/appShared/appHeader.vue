@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #8409DE;">
+  <nav
+    class="navbar navbar-dark navbar-expand-lg"
+    style="background-color: #8409DE;"
+  >
     <div class="container-fluid">
       <a class="navbar-brand" href="#">QA</a>
       <button
@@ -23,18 +26,37 @@
           </li>
         </ul>
 
-        <form class="d-flex me-auto">
-          <input class="form-control searchBox" type="search" placeholder="Search" aria-label="Search" />
-        </form>
+        <div class="d-flex me-auto">
+          <input
+            class="form-control searchBox"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            v-model="searchKey"
+            @keydown.enter="search"
+          />
+        </div>
 
         <ul class="navbar-nav me-0 mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <!-- @mouseover="menuOpened = true"
               @mouseleave="menuOpened = false" -->
-            <a @click="menuOpened = !menuOpened" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+              @click="menuOpened = !menuOpened"
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Gökhan Kandemir
             </a>
-            <ul :class="{ show: menuOpened }" class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul
+              :class="{ show: menuOpened }"
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+            >
               <li><a class="dropdown-item" href="#">Sorularım</a></li>
               <li><a class="dropdown-item" href="#">Favorilerim</a></li>
               <li><hr class="dropdown-divider" /></li>
@@ -53,8 +75,16 @@
 export default {
   data() {
     return {
-      menuOpened: false
+      menuOpened: false,
+      searchKey: null
     };
+  },
+  methods: {
+    search() {
+      this.$store.dispatch("questions/fetchQuestions", {
+        searchKey: this.searchKey
+      });
+    }
   }
 };
 </script>

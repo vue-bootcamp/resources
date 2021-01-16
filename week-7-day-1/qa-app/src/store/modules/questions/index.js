@@ -12,13 +12,16 @@ export default {
     setNewQuestion() {}
   },
   actions: {
-    fetchQuestions({ commit }, selectedCategories) {
+    fetchQuestions({ commit }, { selectedCategories, searchKey }) {
       // const url = this.categoryId
+      console.log("searchKey", searchKey);
       //   ? `/questions?_expand=category&_sort=created_at&_order=desc&categoryId=${this.categoryId}`
       //   : `/questions?_expand=category&_sort=created_at&_order=desc&categoryId=1&categoryId=2`;
       // : `/questions?_expand=category&_sort=created_at&_order=desc`;
-      let url = "/questions?_expand=category&_sort=created_at&_order=desc";
+      let url =
+        "/questions?_expand=category&_sort=created_at&_order=desc&_embed=comments";
 
+      // Eğer kategori seçimi yapilmissa o zaman kategori parametrelerini de ekle...
       if (selectedCategories) {
         const IDs = selectedCategories
           .filter(c => c.selected)
@@ -27,8 +30,13 @@ export default {
         url = `${url}&${IDs}`;
       }
 
+      // Eğer arama yapilmissa..
+      if (searchKey) {
+        url = `${url}&q=${searchKey}`;
+      }
+
       appAxios.get(url).then(question_list_response => {
-        // console.log("question_list_response :>> ", question_list_response);
+        console.log("question_list_response :>> ", question_list_response);
         commit("setQuestions", question_list_response?.data || []);
       });
     },

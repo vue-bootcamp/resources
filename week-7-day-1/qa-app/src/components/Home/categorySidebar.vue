@@ -90,7 +90,9 @@ export default {
     categories: {
       deep: true,
       handler(categories) {
-        this.$store.dispatch("questions/fetchQuestions", categories);
+        this.$store.dispatch("questions/fetchQuestions", {
+          selectedCategories: categories
+        });
       }
     }
   }

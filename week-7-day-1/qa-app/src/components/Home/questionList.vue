@@ -1,5 +1,14 @@
 <template>
   <div v-if="questions.length > 0" class="col-10">
+    <!-- <my-custom-input v-model="myNumber"></my-custom-input> -->
+    <!-- <input type="text" class="mb-1" v-model="myNumber" /> -->
+    <!-- <input
+      type="text"
+      class="mb-1"
+      :value="myNumber"
+      @input="myNumber = $event.target.value"
+    /> -->
+    <!-- <p class="font-weight-bold mb-5">{{ myNumber }}</p> -->
     <question-list-item
       v-for="question in questions"
       :key="question.id"
@@ -15,10 +24,17 @@
 </template>
 <script>
 import questionListItem from "@/components/Home/questionListItem";
+// import MyCustomInput from "@/components/MyCustomInput";
 import { mapGetters } from "vuex";
 export default {
   components: {
     questionListItem
+    // MyCustomInput
+  },
+  data() {
+    return {
+      myNumber: 100
+    };
   },
   created() {
     // this.fetchQuestions();

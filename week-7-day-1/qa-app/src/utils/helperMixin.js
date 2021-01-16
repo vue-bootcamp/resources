@@ -23,6 +23,12 @@ const helperMixin = {
   methods: {
     timesAgo(time) {
       return moment(time).fromNow();
+    },
+    // "2021-01-16T08:18:23.519Z" => 1610785103519
+    orderCreatedAtByASC(a, b) {
+      return (
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
     }
   }
 };
