@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  created() {
+  mounted() {
     this.$store.dispatch("initApp");
     // this.$store.dispatch("categories/fetchCategories");
     // const cList = this.$store.getters["categories/_categoryList"];

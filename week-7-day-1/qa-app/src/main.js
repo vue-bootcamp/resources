@@ -8,6 +8,7 @@ import appHeader from "@/components/appShared/appHeader";
 import appLoading from "@/components/appShared/appLoading";
 
 // Editor..
+// https://www.npmjs.com/package/vue3-quill
 import { quillEditor } from "vue3-quill";
 
 const app = createApp(App);
@@ -17,5 +18,3 @@ app.use(quillEditor);
 app.component("appHeader", appHeader);
 app.component("appLoading", appLoading);
 app.mount("#app");
-
-// https://www.npmjs.com/package/vue3-quill

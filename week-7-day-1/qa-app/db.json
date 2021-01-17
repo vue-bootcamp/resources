@@ -55,34 +55,39 @@
       "details": "S3 Public yapamıyorum lütfen yardım edin arkadaşlar...",
       "categoryId": 12,
       "id": 1,
-      "created_at": "2021-01-08T08:14:49.578Z"
+      "created_at": "2021-01-08T08:14:49.578Z",
+      "userId": 1
     },
     {
       "title": "Amazon'da EC2 Problemi",
       "details": "EC2 nedir anlatabilecek olan var mı?",
       "categoryId": 12,
       "id": 2,
-      "created_at": "2021-01-05T09:14:49.578Z"
+      "created_at": "2021-01-05T09:14:49.578Z",
+      "userId": 1
     },
     {
       "title": "Vue ile Route Problemi",
       "details": "Named Route kullanırken LazyLoad şeklinde bla bla bla bla",
       "categoryId": 1,
       "id": 3,
-      "created_at": "2021-01-07T13:14:49.578Z"
+      "created_at": "2021-01-07T13:14:49.578Z",
+      "userId": 2
     },
     {
       "title": "Deneme Sorusu",
       "details": "Vue.js ile ilgili sorularım var. Yardımcı olabilecek var mi?",
       "categoryId": 1,
       "id": 4,
-      "created_at": "2021-01-09T11:14:49.578Z"
+      "created_at": "2021-01-09T11:14:49.578Z",
+      "userId": 2
     },
     {
       "title": "Bu yeni bir soru",
       "details": "detay 123",
       "categoryId": 8,
       "created_at": "2021-01-09T12:08:41.760Z",
+      "userId": 2,
       "id": 5
     },
     {
@@ -90,6 +95,7 @@
       "details": "aciklamasi nerede gizlidir..",
       "categoryId": 9,
       "created_at": "2021-01-09T12:14:49.578Z",
+      "userId": 2,
       "id": 6
     },
     {
@@ -97,6 +103,7 @@
       "details": "DockerHUB üzerinde bir image var bunu docker run ile çekmeye çalışıyorum ama bir türlü beceremedim. Pull oluyor ama run neden çalışmıyor?",
       "categoryId": 11,
       "created_at": "2021-01-09T12:38:20.746Z",
+      "userId": 2,
       "id": 7
     },
     {
@@ -104,28 +111,40 @@
       "details": "Svelte diye bir şey çıkmış anlamadım gitti. Acaba Vue.js'i geçer mi bilen var mi?",
       "categoryId": 7,
       "created_at": "2021-01-09T12:39:42.097Z",
-      "id": 8
+      "id": 8,
+      "userId": 3
     },
     {
       "title": "Typicode/json-server nasıl?",
       "details": "Böyle bir fake rest api buldum nasıl arkadaşlar? İşe yaramaz bir şeymiş gibi geldi bana?",
       "categoryId": 2,
       "created_at": "2021-01-09T12:44:34.336Z",
-      "id": 9
+      "id": 9,
+      "userId": 3
     },
     {
       "title": "Quill Editor ile Çalışma",
       "details": "<p><em>Selam Arkadaşlar</em> <strong>Quill Editor</strong> kullanan var mı aranızda?</p>",
       "categoryId": 2,
       "created_at": "2021-01-16T11:24:22.389Z",
-      "id": 10
+      "id": 10,
+      "userId": 3
     },
     {
       "title": "Quill 2",
-      "details": "<p><strong>Bir Quill Sorunsalı </strong><em>Arkadaşlar selamlar</em> çokomelli. hayir degil.. hadi canim..</p><pre class=\"ql-syntax\" spellcheck=\"false\">yok artik bakalim bu nasil gözükecek..\n</pre>",
+      "details": "<p><strong>Bir Quill Sorunsalı </strong><em>Arkadaşlar selamlar</em> çokomelli. hayir degil.. hadi canim..</p><pre class=\"ql-syntax\" spellcheck=\"false\">yok artik bakalim bu nasil gözükecek..\n</pre><p>asdadadsadadad</p>",
       "categoryId": 2,
       "created_at": "2021-01-16T11:26:27.292Z",
-      "id": 11
+      "id": 11,
+      "userId": 3
+    },
+    {
+      "title": "Selamlar Quill ile Vue3 Uyumluluğu",
+      "details": "<p>Herkese Merhaba arkadaşlar ben, Vue2 ile beraber Quilljs kullaniyordum. Vue3 için Quill ile uyumlu çalışan bir modül biliyor musunuz?</p>",
+      "categoryId": 1,
+      "created_at": "2021-01-17T10:31:33.522Z",
+      "id": 12,
+      "userId": 3
     }
   ],
   "comments": [
@@ -236,8 +255,55 @@
       "created_at": "2021-01-16T13:42:48.956Z",
       "questionId": 11,
       "id": 18
+    },
+    {
+      "details": "<p><strong>Kızım saçma</strong> <em>sapan</em> sorular sorma babana ihanet etme. Defol git bu platformdan.</p><p><br></p><p><br></p>",
+      "created_at": "2021-01-17T13:39:21.887Z",
+      "questionId": 8,
+      "id": 19
     }
   ],
-  "users": [],
-  "favorites": []
+  "users": [
+    {
+      "full_name": "Barış Tunar",
+      "email": "baris@tun.ar",
+      "password": "123456",
+      "categoryId": 1,
+      "id": 1
+    },
+    {
+      "full_name": "Didem Tümer",
+      "email": "didem@tumer.com",
+      "password": "123456",
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "full_name": "Defne Kandemir",
+      "email": "defne@gkandemir.com",
+      "password": "123",
+      "categoryId": 2,
+      "id": 3
+    }
+  ],
+  "favorites": [
+    {
+      "questionId": 12,
+      "created_at": "2021-01-17T13:21:41.235Z",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "questionId": 11,
+      "created_at": "2021-01-17T13:21:42.350Z",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "questionId": 10,
+      "created_at": "2021-01-17T13:21:43.463Z",
+      "userId": 2,
+      "id": 3
+    }
+  ]
 }

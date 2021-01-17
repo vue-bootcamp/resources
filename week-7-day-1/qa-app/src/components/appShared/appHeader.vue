@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar navbar-dark navbar-expand-lg"
+    class="navbar navbar-dark navbar-expand-lg sticky-top"
     style="background-color: #8409DE;"
   >
     <div class="container-fluid">
@@ -37,32 +37,48 @@
           />
         </div>
 
-        <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+        <router-link
+          v-if="!isAuthenticated"
+          tag="button"
+          to="/login"
+          class="btn btn-outline-primary me-0 mb-2"
+        >
+          Giriş Yap</router-link
+        >
+
+        <ul v-else class="navbar-nav me-0 mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <!-- @mouseover="menuOpened = true"
-              @mouseleave="menuOpened = false" -->
             <a
-              @click="menuOpened = !menuOpened"
+              @click.prevent="menuOpened = !menuOpened"
               class="nav-link dropdown-toggle"
-              href="#"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Gökhan Kandemir
+              {{ currentUser.full_name }}
             </a>
             <ul
               :class="{ show: menuOpened }"
               class="dropdown-menu"
               aria-labelledby="navbarDropdown"
             >
-              <li><a class="dropdown-item" href="#">Sorularım</a></li>
-              <li><a class="dropdown-item" href="#">Favorilerim</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Hesabım</a></li>
               <li>
-                <a class="dropdown-item" href="#">Çıkış Yap</a>
+                <router-link class="dropdown-item" to="/my-questions">
+                  Sorularım
+                </router-link>
+                <router-link class="dropdown-item" to="/favorites">
+                  Favorilerim
+                </router-link>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <router-link class="dropdown-item" to="/account">
+                Hesabım
+              </router-link>
+              <li>
+                <a class="dropdown-item" href="#" @click.prevent="logout"
+                  >Çıkış Yap</a
+                >
               </li>
             </ul>
           </li>
@@ -72,6 +88,7 @@
   </nav>
 </template>
 <script>
+import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -84,7 +101,25 @@ export default {
       this.$store.dispatch("questions/fetchQuestions", {
         searchKey: this.searchKey
       });
-    }
+    },
+    ...mapMutations({
+      logout: "users/logout"
+    })
+  },
+  computed: {
+    ...mapGetters({
+      currentUser: "users/currentUser",
+      isAuthenticated: "users/isAuthenticated"
+    })
+  },
+  mounted() {
+    document
+      .querySelector(":not(#navbarDropdown)")
+      .addEventListener("click", evt => {
+        if (evt?.target?.id !== "navbarDropdown") {
+          this.menuOpened = false;
+        }
+      });
   }
 };
 </script>

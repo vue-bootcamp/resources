@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
               <label for="question-details" class="form-label">Detaylar</label>
-              <quill-editor v-model.value="userData.details" />
+              <quill-editor v-model:value="userData.details" />
             </div>
             <div class="mb-3">
               <label for="question-category" class="form-label">Kategori</label>
@@ -79,7 +79,8 @@ export default {
         appAxios
           .post("/questions", {
             ...this.userData,
-            created_at: new Date()
+            created_at: new Date(),
+            userId: this.currentUser.id
           })
           .then(question_insert_response => {
             console.log("Question insert response", question_insert_response);
@@ -98,7 +99,8 @@ export default {
       );
     },
     ...mapGetters({
-      categories: "categories/_categoryList"
+      categories: "categories/_categoryList",
+      currentUser: "users/currentUser"
     })
   }
 };

@@ -56,7 +56,6 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  emits: ["category-select-event"],
   data() {
     return {
       colors: [

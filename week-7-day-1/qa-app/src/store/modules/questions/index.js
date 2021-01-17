@@ -19,7 +19,7 @@ export default {
       //   : `/questions?_expand=category&_sort=created_at&_order=desc&categoryId=1&categoryId=2`;
       // : `/questions?_expand=category&_sort=created_at&_order=desc`;
       let url =
-        "/questions?_expand=category&_sort=created_at&_order=desc&_embed=comments";
+        "/questions?_expand=category&_sort=created_at&_order=desc&_embed=comments&_expand=user";
 
       // Eğer kategori seçimi yapilmissa o zaman kategori parametrelerini de ekle...
       if (selectedCategories) {

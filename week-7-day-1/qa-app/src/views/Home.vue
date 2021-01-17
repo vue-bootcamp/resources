@@ -2,11 +2,11 @@
   <div class="container-fluid">
     <div class="row mt-3">
       <!-- KATEGORILER -->
-      <category-sidebar @category-select-event="categoryId = $event" />
+      <category-sidebar />
       <!-- !KATEGORILER -->
 
       <!-- SORULAR -->
-      <question-list :categoryId="categoryId" />
+      <question-list />
       <!-- !SORULAR -->
     </div>
   </div>

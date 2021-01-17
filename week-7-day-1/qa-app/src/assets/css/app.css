@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600&display=swap");
+
+body {
+  background-color: #7008ba0d;
+}
 .question-footer {
   background-color: #2a397905;
 }
@@ -16,8 +20,8 @@
   /* or absolute */
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
 }
 
 .question-detail-page .question-action-container a {
@@ -48,6 +52,27 @@
 .btn-primary:focus {
   background-color: #8409de;
   border-color: #8409de;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.btn-outline-primary:active {
+  background-color: #fff;
+  color: #7008ba;
+  border-color: #7008ba;
+}
+.btn-outline-primary:hover {
+  background-color: #fff;
+  color: #7008ba;
+  border-color: #7008ba;
+}
+.btn-outline-primary:focus {
+  background-color: #fff;
+  color: #7008ba;
+  border-color: #7008ba;
 }
 
 .btn-success {
@@ -106,4 +131,10 @@
 
 .ql-container {
   min-height: 200px !important;
+}
+
+.card {
+  -webkit-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75) !important;
 }

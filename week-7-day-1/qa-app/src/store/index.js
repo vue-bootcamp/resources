@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import categories from "./modules/categories";
 import questions from "./modules/questions";
+import users from "./modules/users";
 
 export default createStore({
   state: {},
@@ -14,6 +15,7 @@ export default createStore({
   modules: {
     // benimgüzelmodulum : categories,
     categories,
-    questions
+    questions,
+    users
   }
 });

@@ -11,10 +11,10 @@
                 <h3 class="card-title">{{ question.title }}</h3>
                 <span>
                   <a
-                    v-if="!editQuestion"
+                    v-if="currentUser.id === question.userId && !editQuestion"
                     href="#"
                     @click.prevent="editQuestion = true"
-                    class="btn btn-link text-primary"
+                    class="btn btn-link text-primary pe-0"
                   >
                     <i class="fa fa-edit"></i> Düzenle
                   </a>
@@ -47,7 +47,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="custom-text-light">
                     <i class="fa fa-user-circle me-1"></i>
-                    {{ timesAgo(question.created_at) }} sordu
+                    {{ `${questionUserName}${timesAgo(question.created_at)} sordu` }}
                   </div>
                   <div class="custom-text-light">
                     {{ question.category.title || "-" }}
@@ -122,6 +122,7 @@
 import { appAxios } from "@/utils/securedAxios";
 import helperMixin from "@/utils/helperMixin";
 import { isArray } from "util";
+import { mapGetters } from "vuex";
 
 export default {
   mixins: [helperMixin],
@@ -139,10 +140,9 @@ export default {
     fetchQuestion() {
       appAxios
         .get(
-          `/questions/${this.$route.params.id}?_expand=category&_embed=comments`
+          `/questions/${this.$route.params.id}?_expand=category&_expand=user&_embed=comments`
         )
         .then(question_response => {
-          console.log("question_response", question_response);
           setTimeout(() => {
             this.question = question_response?.data || null;
             if (isArray(this.question?.comments)) {
@@ -175,8 +175,7 @@ export default {
           questionId: +this.$route.params.id
         };
 
-        appAxios.post("/comments", comment).then(new_comment_response => {
-          console.log("new_comment_response :>> ", new_comment_response);
+        appAxios.post("/comments", comment).then(() => {
           this.answer = "";
           this.fetchComments();
         });
@@ -205,6 +204,16 @@ export default {
       } else {
         this.updatedQuestion = null;
       }
+    }
+  },
+  computed : {
+    ...mapGetters({
+      currentUser : "users/currentUser"
+    }),
+    questionUserName(){
+      // if(isObject(this.question?.user)){
+      return `${this?.question?.user?.full_name.split(" ")[0]} `;
+      // }
     }
   }
 };
