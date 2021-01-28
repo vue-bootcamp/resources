@@ -11,7 +11,7 @@
                 <h3 class="card-title">{{ question.title }}</h3>
                 <span>
                   <a
-                    v-if="currentUser.id === question.userId && !editQuestion"
+                    v-if="currentUserID === question.userId && !editQuestion"
                     href="#"
                     @click.prevent="editQuestion = true"
                     class="btn btn-link text-primary pe-0"
@@ -47,7 +47,11 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="custom-text-light">
                     <i class="fa fa-user-circle me-1"></i>
-                    {{ `${questionUserName}${timesAgo(question.created_at)} sordu` }}
+                    {{
+                      `${questionUserName}${timesAgo(
+                        question.created_at
+                      )} sordu`
+                    }}
                   </div>
                   <div class="custom-text-light">
                     {{ question.category.title || "-" }}
@@ -60,7 +64,7 @@
             >
               <!-- CEVAPLAR-->
               <!-- Cevap Yaz Bölümü -->
-              <div class="answerArea w-100 mb-3">
+              <div v-if="currentUser !== null" class="answerArea w-100 mb-3">
                 <div class="form-group w-100 mb-1">
                   <quill-editor v-model:value="answer" />
                 </div>
@@ -76,34 +80,11 @@
               <!-- /Cevap Yaz Bölümü -->
 
               <template v-if="question.comments.length > 0">
-                <div
+                <app-comment-item
                   v-for="comment in question.comments"
                   :key="comment.id"
-                  class="card text-left mb-3 ms-1 w-100"
-                >
-                  <div class="card-body">
-                    <div class="mt-3">
-                      <p class="text-muted" v-html="comment.details"></p>
-                    </div>
-                  </div>
-                  <div
-                    class="card-footer text-muted py-2 question-footer d-flex justify-content-between align-items-center"
-                  >
-                    <div class="custom-text-light">
-                      <i class="fa fa-user-circle me-1"></i>
-                      {{ timesAgo(comment.created_at) }}
-                      cevapladı
-                    </div>
-                    <div class="question-action-container">
-                      <a href="#" class="like-btn text-muted me-2">
-                        <i class="fa fa-thumbs-up"></i> (2)
-                      </a>
-                      <a href="#" class="dislike-btn text-muted">
-                        <i class="fa fa-thumbs-down"></i> (3)
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                  :comment="comment"
+                />
               </template>
 
               <div v-else class="alert alert-primary w-100" role="alert">
@@ -115,17 +96,20 @@
         </div>
       </div>
     </div>
-    <app-loading v-if="!isLoaded || loadingBarShow"></app-loading>
   </div>
 </template>
 <script>
 import { appAxios } from "@/utils/securedAxios";
 import helperMixin from "@/utils/helperMixin";
-import { isArray } from "util";
+// import { isArray } from "util";
 import { mapGetters } from "vuex";
+import appCommentItem from "@/components/appShared/appCommentItem";
 
 export default {
   mixins: [helperMixin],
+  components: {
+    appCommentItem
+  },
   data() {
     return {
       question: null,
@@ -140,29 +124,33 @@ export default {
     fetchQuestion() {
       appAxios
         .get(
-          `/questions/${this.$route.params.id}?_expand=category&_expand=user&_embed=comments`
+          `/questions/${this.$route.params.id}?_expand=category&_expand=user`
         )
         .then(question_response => {
           setTimeout(() => {
             this.question = question_response?.data || null;
-            if (isArray(this.question?.comments)) {
-              this.question.comments.sort(this.orderCreatedAtByASC);
-            }
+            this.question.comments = [];
+            this.fetchComments();
+            // if (isArray(this.question?.comments)) {
+            //   this.question.comments.sort(this.orderCreatedAtByASC);
+            // }
             this.isLoaded = true;
-          }, 750);
+          }, 0);
         });
     },
     fetchComments() {
       this.loadingBarShow = true;
       appAxios
         .get(
-          `/comments/?questionId=${this.$route.params.id}&_sort=created_at&_order=desc`
+          `/comments/?questionId=${this.$route.params.id}&_embed=likes&_embed=dislikes&_sort=created_at&_order=desc`
         )
         .then(comments_response => {
+          console.log("comments_response :>> ", comments_response);
           setTimeout(() => {
             this.question.comments = comments_response?.data || [];
+            this.question.comments.sort(this.orderCreatedAtByASC);
             this.loadingBarShow = false;
-          }, 750);
+          }, 0);
         });
     },
     saveComment() {
@@ -206,11 +194,14 @@ export default {
       }
     }
   },
-  computed : {
+  computed: {
     ...mapGetters({
-      currentUser : "users/currentUser"
+      currentUser: "users/currentUser"
     }),
-    questionUserName(){
+    currentUserID() {
+      return this.currentUser?.id;
+    },
+    questionUserName() {
       // if(isObject(this.question?.user)){
       return `${this?.question?.user?.full_name.split(" ")[0]} `;
       // }

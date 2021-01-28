@@ -2,9 +2,12 @@ import { createStore } from "vuex";
 import categories from "./modules/categories";
 import questions from "./modules/questions";
 import users from "./modules/users";
+import likes from "./modules/likes";
 
 export default createStore({
-  state: {},
+  state: {
+    loading: false
+  },
   mutations: {},
   actions: {
     initApp({ dispatch }) {
@@ -16,6 +19,10 @@ export default createStore({
     // benimgüzelmodulum : categories,
     categories,
     questions,
-    users
+    users,
+    likes
+  },
+  getters: {
+    loading: state => state.loading
   }
 });

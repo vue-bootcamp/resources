@@ -19,5 +19,6 @@
   width: 100vw;
   height: 100vh;
   background-color: #ccccccc9;
+  z-index: 10;
 }
 </style>

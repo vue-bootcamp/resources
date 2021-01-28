@@ -1,4 +1,5 @@
 <template>
+  <app-loading v-if="$store.getters['loading']"></app-loading>
   <div>
     <router-view name="appHeader" />
     <router-view />

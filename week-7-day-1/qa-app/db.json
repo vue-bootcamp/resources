@@ -145,6 +145,14 @@
       "created_at": "2021-01-17T10:31:33.522Z",
       "id": 12,
       "userId": 3
+    },
+    {
+      "title": "Bu yeni bir sorudur..",
+      "details": "<p>Loading Testing..</p>",
+      "categoryId": 1,
+      "created_at": "2021-01-28T19:49:46.611Z",
+      "userId": 2,
+      "id": 13
     }
   ],
   "comments": [
@@ -261,8 +269,67 @@
       "created_at": "2021-01-17T13:39:21.887Z",
       "questionId": 8,
       "id": 19
+    },
+    {
+      "details": "<p>bu soruya cevap veriyorum..</p>",
+      "created_at": "2021-01-27T01:03:45.495Z",
+      "questionId": 11,
+      "id": 20
     }
   ],
+  "likes": [
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "commentId": 18,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "commentId": 20,
+      "userId": 2,
+      "id": 10
+    }
+  ],
+  "dislikes": [],
   "users": [
     {
       "full_name": "Barış Tunar",
@@ -272,7 +339,7 @@
       "id": 1
     },
     {
-      "full_name": "Didem Tümer",
+      "full_name": "Didem Tümer 7",
       "email": "didem@tumer.com",
       "password": "123456",
       "categoryId": 2,
@@ -288,22 +355,28 @@
   ],
   "favorites": [
     {
-      "questionId": 12,
-      "created_at": "2021-01-17T13:21:41.235Z",
-      "userId": 2,
-      "id": 1
-    },
-    {
-      "questionId": 11,
-      "created_at": "2021-01-17T13:21:42.350Z",
-      "userId": 2,
-      "id": 2
-    },
-    {
       "questionId": 10,
       "created_at": "2021-01-17T13:21:43.463Z",
       "userId": 2,
       "id": 3
+    },
+    {
+      "questionId": 11,
+      "created_at": "2021-01-28T20:06:09.397Z",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "questionId": 12,
+      "created_at": "2021-01-28T20:06:10.511Z",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "questionId": 13,
+      "created_at": "2021-01-28T20:06:11.501Z",
+      "userId": 2,
+      "id": 6
     }
   ]
 }

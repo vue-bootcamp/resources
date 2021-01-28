@@ -82,7 +82,11 @@ router.beforeEach((to, from, next) => {
     "NewQuestion"
   ];
   // LocalStorage üzerinde User var mi?
-  if (localStorage?.user) user = JSON.parse(localStorage?.user);
+  try {
+    if (localStorage?.user) user = JSON.parse(localStorage?.user);
+  } catch (error) {
+    user = null;
+  }
   // LocalStorage üzerinde User varsa Store'u güncelle
   if (isObject(user) && !isArray(user)) store.commit("users/setUser", user);
   // isAuthenticated bilgisini Store üzerinden al..

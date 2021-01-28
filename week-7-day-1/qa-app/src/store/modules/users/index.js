@@ -1,5 +1,6 @@
 import { appAxios } from "@/utils/securedAxios";
 import router from "../../../router";
+import { isObject } from "util";
 export default {
   namespaced: true,
   state: {
@@ -9,6 +10,7 @@ export default {
   mutations: {
     setUser(state, pUser) {
       state.user = pUser;
+      localStorage.user = JSON.stringify(pUser);
     },
     logout(state) {
       state.user = null;
@@ -31,7 +33,6 @@ export default {
       appAxios.post("/users", pUser).then(register_response => {
         console.log("Register", register_response);
         commit("setUser", register_response?.data);
-        localStorage.user = JSON.stringify(register_response?.data);
         dispatch("setFavorites");
         router.push("/");
       });
@@ -46,11 +47,17 @@ export default {
           ) {
             commit("setUser", login_response?.data[0]);
             // localStorage.setItem("key", value)
-            localStorage.user = JSON.stringify(login_response?.data[0]);
             dispatch("setFavorites");
             router.push("/");
           }
         });
+    },
+    update({ commit }, pUser) {
+      if (isObject(pUser)) {
+        appAxios.patch(`/users/${pUser.id}`, pUser).then(update_response => {
+          commit("setUser", update_response?.data);
+        });
+      }
     },
     // Favorites...
     setFavorites({ state, commit }) {
@@ -70,7 +77,9 @@ export default {
       if (matchedFavorite) {
         // Eğer varsa favori listesinden çıkar.
         appAxios
-          .delete(`/favorites/${matchedFavorite.id}`)
+          .delete(`/favorites/${matchedFavorite.id}`, {
+            headers: { noLoading: true }
+          })
           .then(delete_response => {
             console.log("delete_response", delete_response);
             commit("deleteFavorite", matchedFavorite.id);
@@ -83,10 +92,12 @@ export default {
           created_at: new Date(),
           userId: state.user.id
         };
-        appAxios.post("/favorites", favoriteItem).then(favorite_response => {
-          console.log("favorite_response", favorite_response);
-          commit("addToFavorites", favorite_response?.data);
-        });
+        appAxios
+          .post("/favorites", favoriteItem, { headers: { noLoading: true } })
+          .then(favorite_response => {
+            console.log("favorite_response", favorite_response);
+            commit("addToFavorites", favorite_response?.data);
+          });
       }
     }
   },
